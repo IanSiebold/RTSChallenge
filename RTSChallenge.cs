@@ -27,10 +27,12 @@ namespace RTSLabCodeChallenge
 
         public string stringRotation(string input, int rotation)
         {
+            //Even though the propt says it will be positive rotations I added this check just to be sure
             if(rotation < 0)
             {
                 throw new Exception("Invalid input - rotation amount is not positive. Value:" + rotation);
             }
+            //% will remove the full rotations and leave only the part of the rotation that matters
             int change = rotation % input.Length;
             return input.Substring(input.Length - change, change) + input.Substring(0, input.Length - change);
         }
